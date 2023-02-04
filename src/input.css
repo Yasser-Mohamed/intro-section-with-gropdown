@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+html{
+    box-sizing: border-box;
+    font-family: "Epilogue",sans-serif;
+}
+*{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+}
+#menu ul li ,
+#miniMenu div{
+    color:hsl(0, 0%, 41%);
+}
+#miniMenu #div1,
+#miniMenu #div2{
+    z-index: 34;
+    background-color: white;
+}
+.show{
+    display: block;
+}
+nav form button ,
+main article p{
+    color:hsl(0, 0%, 41%);
+}
+
+nav form button:hover{
+    color:black;
+    border-color: black;
+    transition: 0.5s;
+}
+main article button:hover{
+    background-color: white;
+    color: black;
+    border-color: black;
+    transition: 0.5s;
+}
+main article{
+    justify-content: center;
+    align-content: space-evenly;
+    justify-items: start;
+}
+.foot:hover{
+    color: chocolate;
+    
+}
+@media (min-width:769px){
+    main #firstImage{
+        display: block;
+    }
+    main #secondeImage{
+        display: none;
+    }
+    main article{
+        display: grid;
+        height: 100vh;
+    }
+    main article h1{
+        font-size: 3rem/* 48px */;
+        line-height: 1;
+    }
+}
+.arrow-up{
+    display: none;
+}
+@media(max-width: 768px){
+    header nav aside{
+        position: fixed;
+        height: 100vh;
+        right: 0;
+        background-color: white;
+
+    }
+    .layout{
+        background-color: hsl(0, 0%, 41%);
+    }
+    nav{
+        justify-content: space-between;
+    }
+    .links{
+        display: none;
+    }
+
+    aside {
+        /* position: fixed;
+        margin-top: -8px; */
+    }
+    aside #sideMenu{
+        padding: 5px;
+        width: 200px;
+    }
+    nav #open_menu{
+        position: relative;
+    }
+    #sideMenu ul li .arrow{
+        width: 10px;
+        height: 6px;
+        margin-top: 8px;
+        margin-left: 5px;
+    }
+    #sideMenu ul{
+        color:hsl(0, 0%, 41%);
+        padding-top: 20px;
+    }
+    #sideMenu ul li{
+        margin-bottom: 10px;
+    }
+    #sideMenu ul li a:hover{
+        color: black;
+    }
+    aside ul li .content-Features{
+        position: relative;
+        left: 35px;
+        margin: 10px;
+        padding-right: 10px;
+    }
+    aside ul li .content-Features a{
+        margin: 10px;
+    }
+    header nav aside button img{
+        position: absolute;
+        right: 30px;
+        margin-top: -10px;
+    }
+    .arrow-up{
+        display: none;
+    }
+    main{
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main article{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 40px auto;
+        gap: 35px;
+    }
+    main article h1{
+        margin: 0 auto ;
+        font-size: 3rem/* 48px */;
+        line-height: 1;
+    }
+    main #firstImage{
+        display: none;
+    }
+    main #secondeImage{
+        display: block;
+    }
+    header nav #menu{
+        display: none;
+        
+    }
+}

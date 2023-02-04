@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- css style -->
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="input.css">
+</head>
+<body>
+  <!--                       header section             -->
+  <header class=" bg-white mb-5">
+    <nav class=" container py-2 px-6 flex">
+      <h1 class="text-4xl font-bold ">snap</h1>
+      <button id="open_menu" onclick="menu_open()"  class="md:hidden" ><img src="../images/icon-menu.svg" alt="menu"></button>
+      <aside  class="md:hidden flex flex-col "> 
+        <div  id="sideMenu" class="">
+          <button onclick="menu_close()"  class="md:hidden" ><img src="../images/icon-close-menu.svg" alt="menu"></button>
+          <ul>
+            <li>
+              <a onclick="open_links()" href="#" class="Features flex p-3 h-1 " >Features <img id="arrow_up" class="arrow " style="width: 10px;height: 6px;margin-top: 8px;margin-left: 5px;" src="../images/icon-arrow-down.svg" alt=""><img id="arrow-up" class="hidden" style="width: 10px;height: 6px;margin-top: 8px;margin-left: 5px;" src="../images/icon-arrow-up.svg" alt=""> </a>
+              <div id="links" class="content-Features flex flex-col p-3 " style="padding-right: 50px;">
+                <a class="flex p-4 m-5 " href="#"><img class="pr-2" src="../images/icon-todo.svg" alt="todo">Todo</a>
+                <a class="flex p-4 m-5 " href="#"><img class="pr-2" src="../images/icon-calendar.svg" alt="calender">Calender</a>
+                <a class="flex p-4 m-5 " href="#"><img class="pr-2" src="../images/icon-reminders.svg" alt="todo">Reminders</a>
+                <a class="flex p-4 m-5 " href="#"><img class="pr-2" src="../images/icon-planning.svg" alt="todo">Planning</a>
+              </div>
+            </li>
+            <li>
+              <a onclick="open_link()" href="#" class="Company flex p-3 h-1">Company <img id="arroow_up" class="arrow " style="width: 10px;height: 6px;margin-top: 8px;margin-left: 5px;" src="../images/icon-arrow-down.svg" alt=""><img id="arroow-up" class="hidden" style="width: 10px;height: 6px;margin-top: 8px;margin-left: 5px;" src="../images/icon-arrow-up.svg" alt=""> </a>
+              <div id="link" class="content-Features flex flex-col ">
+                <a href="#">History</a>
+                <a href="#">Our Team</a>
+                <a href="#">Blog</a>
+              </div>
+            </li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <form class="flex flex-col" action="">
+            <button type="button" name="button">Login</button>
+            <button class="p-2 px-4 border-solid border-2 rounded-2xl my-2" type="button" name="button">Register</button>
+          </form>
+        </div>
+      </aside>
+      <div id="menu" class="flex justify-between w-full">
+        
+        <div class="flex justify-start mx-5">
+          <ul class="flex justify-between flex-row px-7 items-center">
+            <li>
+              <button id="btn1" onclick="toggleMenu1()" class="hover:text-black flex items-center ml-2 pr-4">Features<img id="icon1" class="m-1"  src="../images/icon-arrow-down.svg" alt=""><img id="icon11" class="hidden" style="width: 10px;height: 6px;margin-left: 5px;" src="../images/icon-arrow-up.svg" alt=""></button>
+            </li>
+            <li>
+              <button id="btn2"onclick="toggleMenu2()"  class="hover:text-black flex items-center ml-2 pr-4">Company<img id="icon2" class="m-1" src="../images/icon-arrow-down.svg" alt=""><img id="icon22" class="hidden" style="width: 10px;height: 6px;margin-left: 5px;" src="../images/icon-arrow-up.svg" alt=""></button>
+            </li>
+            <li class="ml-2 pr-4"><a class="hover:text-black" href="#">Careers</a></li>
+            <li><a class="hover:text-black" href="#">About</a></li>
+          </ul>
+        </div>
+        <form class="flex mx-10" action="">
+          <button class="mx-5" type="button" name="button">Login</button>
+          <button class="p-2 px-4 border-solid border-2 rounded-2xl" type="button" name="button">Register</button>
+        </form>
+      </div>
+    </nav>
+    <div id="miniMenu" class="relative w-full" >
+      <div id="div1" class="hidden  bg-white shadow-2xl w-fit rounded-md absolute left-32 ">
+        <a class="hover:text-black flex mx-4 mb-2 pt-3 pl-2 pb-1" href="#"><img class="pr-2" src="../images/icon-todo.svg" alt="todo">Todo</a>
+        <a class="hover:text-black flex mx-4 mb-2  pl-2 pb-1" href="#"><img class="pr-2" src="../images/icon-calendar.svg" alt="calender">Calender</a>
+        <a class="hover:text-black flex mx-4 mb-2  pl-2 pb-1" href="#"><img class="pr-2" src="../images/icon-reminders.svg" alt="todo">Reminders</a>
+        <a class="hover:text-black flex mx-4 mb-2  pl-2 pb-3" href="#"><img class="pr-2" src="../images/icon-planning.svg" alt="todo">Planning</a>
+      </div>
+      <div id="div2" class="hidden shadow-2xl w-fit absolute rounded-md left-72">
+        <a class="hover:text-black flex flex-col px-2 mx-4 my-2 pt-2 " href="#">History</a>
+        <a class="hover:text-black flex flex-col px-2 mx-4 my-2  " href="#">Our Team</a>
+        <a class="hover:text-black flex flex-col px-2 mx-4 my-2 pb-2 " href="#">Blog</a>
+      </div>
+    </div>
+  </header>
+<!--                           main section                -->
+  <div id="layout" class="">
+    <main class="container w-12 grid grid-cols-2 m-5 my-9  md:flex md:flex-col  ">
+      <img id="firstImage" class="h-screen order-2" src="../images/image-hero-desktop.png" alt="desktop-image">
+      <img id="secondeImage" src="../images/image-hero-mobile.png" class=" w-full" alt="mobile-image">
+      <article class=" mx-10">
+        <h1 class="font-bold  block ">Make remote work</h1>
+        <p>
+          Get your team in sync, no matter your location. Streamline processes,
+        create team rituals, and watch productivity soar.
+        </p>
+        <button class="block p-2 px-4 border-solid border-2 rounded-2xl bg-black text-white" type="button" name="button">Learn more</button>
+        <ul class="flex justify-between items-center ">
+          <li><img class="mx-4" src="../images/client-databiz.svg" alt=""></li>
+          <li><img class="mx-4" src="../images/client-audiophile.svg" alt=""></li>
+          <li><img class="mx-4" src="../images/client-meet.svg" alt=""></li>
+          <li><img class="mx-4" src="../images/client-maker.svg" alt=""></li>
+        </ul>
+      </article>
+    </main>
+    <!--                    footer section                      -->
+    <footer>
+      <div class="attribution">
+        Challenge by <a class="foot" href="https://www.frontendmentor.io?ref=challenge" rel="noopener" target="_blank">Frontend Mentor</a>.
+        Coded by <a class="foot" href="https://www.frontendmentor.io/profile/Yasser-Mohamed">Yasser Mohamed</a>.
+      </div>
+    </footer>
+  </div>
+</body>
+<script src="app.js"></script>
+</html>
